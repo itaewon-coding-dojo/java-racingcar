@@ -8,11 +8,12 @@ public class Calculator {
         String[] arithmetics = InputExtactor.extractCalculatorInputs(s);
         
         acc = Integer.parseInt(arithmetics[0]);
-        
+        System.out.println(acc);
+
         for(int i = 1; i< arithmetics.length; i += 2) {
               acc = ArithmeticOperation.arithmeticOperation(acc, Integer.parseInt(arithmetics[i+1]), arithmetics[i]);
         }
-
+        System.out.println(acc);
         return acc;
     }
 }

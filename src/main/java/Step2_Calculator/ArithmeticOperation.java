@@ -20,7 +20,7 @@ public class ArithmeticOperation {
             return multiply(acc, curr);
         }
 
-        return 0;
+        return acc;
     }
 
     private static int sum(int acc, int curr) {
