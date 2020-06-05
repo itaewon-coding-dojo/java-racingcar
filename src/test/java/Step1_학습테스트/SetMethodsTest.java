@@ -1,4 +1,6 @@
-import org.assertj.core.internal.Numbers;
+package Step1_학습테스트;
+
+import Step1_학습테스트.SetMethods;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +14,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("set Method Test")
 public class SetMethodsTest {

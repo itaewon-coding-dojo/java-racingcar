@@ -1,3 +1,6 @@
+package Step1_학습테스트;
+
+import Step1_학습테스트.StringMethods;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

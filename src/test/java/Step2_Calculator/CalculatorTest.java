@@ -1,3 +1,5 @@
+package Step2_Calculator;
+
 import Step2_Calculator.Calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

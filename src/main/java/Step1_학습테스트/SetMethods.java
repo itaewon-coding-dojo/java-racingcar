@@ -1,4 +1,5 @@
-import java.util.List;
+package Step1_학습테스트;
+
 import java.util.Set;
 
 public class SetMethods {
