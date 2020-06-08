@@ -9,5 +9,4 @@ public class RandomGenerator {
         generator = new Random();
         return generator.nextInt(max);
     }
-
 }
