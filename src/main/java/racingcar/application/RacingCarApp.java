@@ -5,16 +5,18 @@ import racingcar.domain.CarList;
 import racingcar.view.InputView;
 import racingcar.view.ResultView;
 
+import java.util.Arrays;
+
 public class RacingCarApp {
     public static void main(String[] args) {
         InputView inputView = new InputView();
 
-        inputView.howManyCars();
-        int numberOfCars = inputView.getUserInput();
+        inputView.whatCarNamesAre();
+        String nameOfCars = inputView.getUserStringInput();
         inputView.howManyTimes();
-        int numberOfTimes = inputView.getUserInput();
+        int numberOfTimes = inputView.getUserIntInput();
 
-        CarList carList = new CarList(numberOfCars);
+        CarList carList = new CarList(nameOfCars);
         ResultView resultView = new ResultView();
 
         for (int i = 0; i < numberOfTimes; i += 1) {
@@ -23,5 +25,7 @@ public class RacingCarApp {
             Car[] cars = carList.getCars();
             resultView.showResult(cars);
         }
+
+        resultView.showWinner(carList.getWinners());
     }
 }

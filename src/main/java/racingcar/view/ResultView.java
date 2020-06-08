@@ -4,15 +4,24 @@ import racingcar.domain.Car;
 
 public class ResultView {
     public void showResult(Car[] cars) {
-        int count = 1;
         for (Car car : cars) {
-            System.out.printf("[%d]RacingCar) ", count);
-            for (int i = 0; i < car.getStatus(); i += 1) {
-                System.out.print("-");
-            }
-            System.out.println("");
-            count += 1;
+            this.showCarStatus(car);
         }
         System.out.println("──────────────────────");
+    }
+
+    private void showCarStatus(Car car) {
+        System.out.printf("[%s] ", car.getName());
+        for (int i = 0; i < car.getStatus(); i += 1) {
+            System.out.print("-");
+        }
+        System.out.println("");
+    }
+
+    public void showWinner(Object[] cars) {
+        System.out.print("최종 우승: ");
+        for (Object car : cars) {
+            System.out.printf("%s ", car);
+        }
     }
 }

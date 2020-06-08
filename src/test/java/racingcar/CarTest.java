@@ -20,10 +20,17 @@ public class CarTest {
             "9, 1",
     })
     @DisplayName("move and getStatus")
-    public void test(int input, int expected) {
-        Car car = new Car();
+    public void moveAndGetStatus(int input, int expected) {
+        Car car = new Car("Audi");
 
         car.move(input);
         assertThat(car.getStatus()).isEqualTo(expected);
+    }
+
+    @Test
+    public void getName() {
+        Car car = new Car("Audi");
+
+        assertThat(car.getName()).isEqualTo("Audi");
     }
 }
