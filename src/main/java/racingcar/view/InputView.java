@@ -4,8 +4,13 @@ import java.util.Scanner;
 
 public class InputView {
     public int getUserInput() {
-        Scanner input = new Scanner(System.in);
-        return input.nextInt();
+        try {
+            Scanner input = new Scanner(System.in);
+            return input.nextInt();
+        } catch (Exception e) {
+            System.out.println("숫자로 다시 입력해주세요");
+            return this.getUserInput();
+        }
     }
 
     public void howManyCars() {
