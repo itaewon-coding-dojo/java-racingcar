@@ -15,16 +15,15 @@ public class RacingGame {
 
         int carNumbers = InputView.carAmount();
         carPositions = new int[carNumbers];
-        System.out.println(Arrays.toString(carPositions));
 
         time = InputView.loopCount();
-        System.out.println("실행 결과");
 
         move();
 
     }
 
     public static int[] move() {
+        ResultView.startMove();
         for(int j =0; j < time; j ++ ) {
             for (int i = 0; i < carPositions.length; i++) {
                 carPositions[i] += Car.move();
