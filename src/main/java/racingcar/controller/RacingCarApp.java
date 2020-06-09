@@ -1,4 +1,4 @@
-package racingcar.application;
+package racingcar.controller;
 
 import racingcar.domain.Car;
 import racingcar.domain.CarList;
@@ -21,9 +21,7 @@ public class RacingCarApp {
 
         for (int i = 0; i < numberOfTimes; i += 1) {
             carList.moveAllCars();
-
-            Car[] cars = carList.getCars();
-            resultView.showResult(cars);
+            resultView.showResult(carList.getCars());
         }
 
         resultView.showWinner(carList.getWinners());

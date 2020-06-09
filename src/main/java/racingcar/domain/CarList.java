@@ -10,14 +10,15 @@ public class CarList {
 
     public CarList(String carNames) {
         String[] names = carNames.split(",");
-        cars = new Car[names.length];
+        this.cars = new Car[names.length];
+
         for (int i = 0; i < names.length; i += 1) {
-            cars[i] = new Car(names[i]);
+            this.cars[i] = new Car(names[i]);
         }
     }
 
     public Car[] getCars() {
-        return cars;
+        return this.cars;
     }
 
     public void moveAllCars() {
@@ -28,21 +29,20 @@ public class CarList {
     }
 
     public Object[] getWinners() {
-        Arrays.sort(cars);
-        Car winner = cars[0];
+        Arrays.sort(this.cars);
+        int winnerStatus = this.cars[0].getStatus();
 
         ArrayList<String> winners = new ArrayList<>();
-        winners.add(winner.getName());
 
-        for (int i = 1; i < cars.length; i += 1) {
-            addWinner(winners, cars[i], winner);
+        for (Car car : this.cars) {
+            addWinner(winners, car, winnerStatus);
         }
 
         return winners.toArray();
     }
 
-    private void addWinner(ArrayList<String> winners, Car current, Car existingWinner) {
-        if (current.getStatus() == existingWinner.getStatus()) {
+    public void addWinner(ArrayList<String> winners, Car current, int winnerStatus) {
+        if (current.getStatus() == winnerStatus) {
             winners.add(current.getName());
         }
     }

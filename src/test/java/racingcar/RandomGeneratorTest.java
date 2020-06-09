@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RandomGeneratorTest {
     @Test
-    @DisplayName("get")
+    @DisplayName("get()")
     public void get() {
         RandomGenerator randomGenerator = new RandomGenerator();
         assertThat(randomGenerator.get() >= 0).isTrue();

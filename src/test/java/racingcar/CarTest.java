@@ -19,7 +19,7 @@ public class CarTest {
             "5, 1",
             "9, 1",
     })
-    @DisplayName("move and getStatus")
+    @DisplayName("move() and getStatus()")
     public void moveAndGetStatus(int input, int expected) {
         Car car = new Car("Audi");
 
@@ -28,6 +28,7 @@ public class CarTest {
     }
 
     @Test
+    @DisplayName("getName()")
     public void getName() {
         Car car = new Car("Audi");
 
