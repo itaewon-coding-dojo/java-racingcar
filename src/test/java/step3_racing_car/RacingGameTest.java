@@ -19,7 +19,7 @@ public class RacingGameTest {
     @DisplayName("if moved")
     @Test
     public void moveTest() {
-        assertTrue(racingGame.move().length == 5);
+        assertTrue(racingGame.move(new String[] {}).length == 5);
     }
 
 }

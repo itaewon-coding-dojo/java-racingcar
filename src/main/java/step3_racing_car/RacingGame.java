@@ -1,7 +1,5 @@
 package step3_racing_car;
 
-import java.util.Arrays;
-
 public class RacingGame {
     private static int[] carPositions;
     private static int time;
@@ -12,26 +10,29 @@ public class RacingGame {
     }
 
     public static void main(String[] args) {
-
-        int carNumbers = InputView.carAmount();
-        carPositions = new int[carNumbers];
-
+        String carNames = InputView.carNames();
+        String[] carListNames = CarList.getNames(carNames);
+        carPositions = new int[carListNames.length];
         time = InputView.loopCount();
-
-        move();
-
+        move(carListNames);
+        int[] winnersIndex = RaceCalculator.calculateWinner(carPositions);
+        String[] winnerList = CarList.getIndexNames(carListNames, winnersIndex);
+        ResultView.showWinner(winnerList);
     }
 
-    public static int[] move() {
+    public static int[] move(String[] carListNames) {
         ResultView.startMove();
         for(int j =0; j < time; j ++ ) {
-            for (int i = 0; i < carPositions.length; i++) {
-                carPositions[i] += Car.move();
-            }
-            ResultView.carPositions(carPositions);
+            changePosition();
+            ResultView.carPositions(carPositions,carListNames);
         }
         return carPositions;
     }
 
+    public static void changePosition() {
+        for (int i = 0; i < carPositions.length; i++) {
+            carPositions[i] += Car.move();
+        }
+    }
 
 }
