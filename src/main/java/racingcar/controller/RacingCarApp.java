@@ -19,9 +19,12 @@ public class RacingCarApp {
         CarList carList = new CarList(nameOfCars);
         ResultView resultView = new ResultView();
 
+
         for (int i = 0; i < numberOfTimes; i += 1) {
+            resultView.clear();
             carList.moveAllCars();
             resultView.showResult(carList.getCars());
+            resultView.sleep(1000);
         }
 
         resultView.showWinner(carList.getWinners());

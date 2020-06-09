@@ -24,4 +24,18 @@ public class ResultView {
             System.out.printf("%s ", car);
         }
     }
+
+    public void clear() {
+        for (int i = 0; i < 40; i += 1) {
+            System.out.println("");
+        }
+    }
+
+    public void sleep(int number) {
+        try {
+            Thread.sleep(number);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
