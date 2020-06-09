@@ -13,8 +13,13 @@ App
 Domain
 - car
     1. move(a,b)
-    2. randomMove();
-    
+    2. randomMove()
+- carList
+    1. getNames() 
+    2. getIndexNames()
+- RaceCalculator
+    1. calculateWinner
+    2. calculateFurthestPosition
     
 UI
 - InputView -> input 넣는 scanner
