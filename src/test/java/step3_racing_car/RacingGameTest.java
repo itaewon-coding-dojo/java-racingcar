@@ -19,7 +19,27 @@ public class RacingGameTest {
     @DisplayName("if moved")
     @Test
     public void moveTest() {
-        assertTrue(racingGame.move(new String[] {}).length == 5);
+        assertTrue(racingGame.move().length == 5);
     }
+
+    @Test
+    public void getCarPositionTest() {
+        assertTrue(racingGame.getCarPosition().length == 5);
+    }
+
+    @Test
+    public void getRacingGameHistoryTest() {
+        assertTrue(racingGame.getRacingGameHistory().length == 5);
+    }
+
+    @Test
+    public void changePositionTest() {
+        int positionHistory1 = RacingGame.getCarPosition()[0];
+        RacingGame.move();
+        int positionHistory2 = RacingGame.getCarPosition()[0];
+        System.out.println(positionHistory1 + "  " + positionHistory2);
+        assertTrue(positionHistory1 != positionHistory2);
+    }
+
 
 }
