@@ -1,4 +1,10 @@
-package step3_racing_car;
+package step5_racing_car.controller;
+
+import step5_racing_car.domain.CarList;
+import step5_racing_car.domain.RaceCalculator;
+import step5_racing_car.domain.RacingGame;
+import step5_racing_car.view.InputView;
+import step5_racing_car.view.ResultView;
 
 public class RacingGameApp {
     public static void main(String[] args) {

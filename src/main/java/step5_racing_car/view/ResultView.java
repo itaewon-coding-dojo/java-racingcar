@@ -1,4 +1,4 @@
-package step3_racing_car;
+package step5_racing_car.view;
 
 public class ResultView {
     public static void carPositions(int[] carPositions, String[] carListNames) {

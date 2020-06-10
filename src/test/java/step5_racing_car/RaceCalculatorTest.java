@@ -1,6 +1,7 @@
-package step3_racing_car;
+package step5_racing_car;
 
 import org.junit.jupiter.api.Test;
+import step5_racing_car.domain.RaceCalculator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;

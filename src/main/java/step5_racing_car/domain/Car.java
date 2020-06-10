@@ -1,6 +1,4 @@
-package step3_racing_car;
-
-import java.util.Random;
+package step5_racing_car.domain;
 
 public class Car {
 

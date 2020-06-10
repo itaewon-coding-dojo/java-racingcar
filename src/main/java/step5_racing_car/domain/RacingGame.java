@@ -1,4 +1,4 @@
-package step3_racing_car;
+package step5_racing_car.domain;
 
 public class RacingGame {
     private static int[] currentCarPositions;
