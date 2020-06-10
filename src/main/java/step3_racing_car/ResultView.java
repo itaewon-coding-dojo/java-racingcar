@@ -28,4 +28,9 @@ public class ResultView {
     }
 
 
+    public static void showHistory(int[][] carPositionHistory, String[] carListNames) {
+        for(int[] rounds : carPositionHistory){
+            carPositions(rounds, carListNames);
+        }
+    }
 }

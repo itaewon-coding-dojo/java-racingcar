@@ -1,37 +1,35 @@
 package step3_racing_car;
 
 public class RacingGame {
-    private static int[] carPositions;
+    private static int[] currentCarPositions;
     private static int time;
+    private static int[][] positionHistory;
 
-    public RacingGame(int[] carPositions, int time) {
-        this.carPositions = carPositions;
+    public RacingGame(int[] currentCarPositions, int time) {
+        this.currentCarPositions = currentCarPositions;
         this.time = time;
+        this.positionHistory= new int[time][];
     }
 
-    public static void main(String[] args) {
-        String carNames = InputView.carNames();
-        String[] carListNames = CarList.getNames(carNames);
-        carPositions = new int[carListNames.length];
-        time = InputView.loopCount();
-        move(carListNames);
-        int[] winnersIndex = RaceCalculator.calculateWinner(carPositions);
-        String[] winnerList = CarList.getIndexNames(carListNames, winnersIndex);
-        ResultView.showWinner(winnerList);
+    public static int[] getCarPosition() {
+        return currentCarPositions;
     }
 
-    public static int[] move(String[] carListNames) {
-        ResultView.startMove();
+    public static int[][] getRacingGameHistory() {
+        return positionHistory;
+    }
+
+    public static int[] move() {
         for(int j =0; j < time; j ++ ) {
             changePosition();
-            ResultView.carPositions(carPositions,carListNames);
+            positionHistory[j] = currentCarPositions;
         }
-        return carPositions;
+        return currentCarPositions;
     }
 
     public static void changePosition() {
-        for (int i = 0; i < carPositions.length; i++) {
-            carPositions[i] += Car.move();
+        for (int i = 0; i < currentCarPositions.length; i++) {
+            currentCarPositions[i] += Car.move();
         }
     }
 
